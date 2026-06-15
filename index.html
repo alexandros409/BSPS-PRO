@@ -13,7 +13,6 @@
             color: #1a1a1a;
             letter-spacing: -0.01em;
         }
-        /* Luxury Minimalist Card Architecture */
         .luxury-card {
             background: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.05);
@@ -23,7 +22,6 @@
         .accent-text { color: #9e5738; }
         .accent-bg { background-color: #9e5738; }
         
-        /* Custom Fine-Line Sliders */
         input[type="range"] {
             -webkit-appearance: none;
             appearance: none;
@@ -53,7 +51,7 @@
     <header class="max-w-6xl mx-auto mb-10 flex flex-col sm:flex-row items-center justify-between p-6 bg-white border border-gray-100 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.015)] gap-4">
         <div class="flex items-center gap-4">
             <div class="w-12 h-12 rounded-xl border border-gray-100 bg-gray-50 flex items-center justify-center">
-                <svg class="w-6 h-6 architecture accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
             </div>
@@ -196,7 +194,7 @@
                         <input type="checkbox" id="selfEval" class="w-4 h-4 accent-[#9e5738] cursor-pointer" onchange="updateData()">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-neutral-500 mb-1">Ποιοτικά Σχόλια & Συγκεκριμένα Παραδείγματα</label>
+                        <label class="block text-xs font-medium text-neutral-500 mb-1">Ποιοτικά Σχόλια & Παραδείγματα Συμπεριφοράς</label>
                         <textarea id="qualitativeComments" rows="3" class="w-full bg-gray-50/50 border border-gray-200 rounded-xl px-4 py-2 text-xs font-medium text-neutral-800 focus:outline-none focus:border-[#9e5738] transition" placeholder="Καταγράψτε συγκεκριμένα γεγονότα από τη βάρδια..."></textarea>
                     </div>
                     <div>
@@ -261,11 +259,11 @@
                 "5: [Υπόδειγμα] Ολοκληρώνει τις εργασίες πριν την προθεσμία με άριστη ποιότητα."
             ],
             comm: [
-                "1: [Ανεπαρκής] Ελλιπής επικοινωνία με πελάτες ή ομάδα, πρόκληση παρεξηγήσεων.",
-                "2: [Βασικός] Τυπική επικοινωνία, αλλά χάνει τη μη λεκτική επαφή και τις ανάγκες των γύρω του.",
-                "3: [Επαρκής] Ακούει ενεργά, μεταφέρει πληροφορίες με σαφήνεια και πελατοκεντρική προσέγγιση.",
-                "4: [Υψηλός] Υψηλή ενσυναίσθηση, προβλέπει τις ανάγκες των πελατών (Anticipation).",
-                "5: [Υπόδειγμα] Υπόδειγμα επικοινωνίας, επιλύει άμεσα κάθε παρεξήγηση."
+                "1: [Ανεπαρκής] Αγνοεί τον πελάτη, δεν χαμογελά κατά την είσοδο, δεν χαιρετά στην αναχώρηση.",
+                "2: [Βασικός] Μιλάει τυπικά και μηχανικά, αλλά χωρίς οπτική επαφή ή αυθεντικό καλωσόρισμα.",
+                "3: [Επαρκής] Χαμογελάει καθαρά, κοιτάζει στα μάτια, χαιρετάει πάντα στην είσοδο και την έξοδο.",
+                "4: [Υψηλός] Κάνει ζεστό καλωσόρισμα, παρατηρεί και γεμίζει άδεια ποτήρια/ψωμί πριν του το ζητήσουν.",
+                "5: [Υπόδειγμα] Απόλυτη Born to Host συμπεριφορά. Προβλέπει κάθε ανάγκη, συνδέεται αυθεντικά, επιλύει παρεξηγήσεις άμεσα."
             ],
             team: [
                 "1: [Ανεπαρκής] Ατομικιστική συμπεριφορά, άρνηση υποστήριξης της ομάδας ή αποδοχής κριτικής.",
