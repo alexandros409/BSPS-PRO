@@ -3,40 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSPS Pro - HMS Evaluation</title>
-    <!-- Tailwind CSS CDN -->
+    <title>BSPS Pro - HMS Evaluation Enterprise</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #090d16;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #090d16; }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.05); }
     </style>
 </head>
 <body class="text-slate-100 min-h-screen bg-gradient-to-br from-[#090d16] via-[#0f172a] to-[#090d16] p-4 md:p-8">
 
-    <!-- HEADER SECTION -->
-    <header class="max-w-5xl mx-auto mb-8 flex flex-col sm:flex-row items-center justify-between p-6 rounded-3xl glass-panel gap-4">
+    <!-- HEADER -->
+    <header class="max-w-6xl mx-auto mb-8 flex flex-col sm:flex-row items-center justify-between p-6 rounded-3xl glass-panel gap-4">
         <div class="flex items-center gap-5">
-            <!-- Glassmorphism Premium Icon -->
             <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-tr from-white/10 to-white/5 border border-white/10 flex items-center justify-center shadow-inner group">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
                 <svg class="w-8 h-8 text-amber-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
             </div>
             <div>
@@ -45,100 +29,118 @@
             </div>
         </div>
         <div>
-            <span class="text-xs bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-slate-400 font-mono">v2.0 (B2B HTML)</span>
+            <span class="text-xs bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-slate-400 font-mono">v3.0 (Full Analysis Integration)</span>
         </div>
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- FORM -->
+        <!-- FORM INTERFACE -->
         <div class="lg:col-span-2 space-y-6">
             
-            <!-- INFO -->
+            <!-- ΣΤΟΙΧΕΙΑ ΒΑΡΔΙΑΣ -->
             <section class="p-6 rounded-3xl glass-panel space-y-4">
                 <h2 class="text-lg font-semibold text-slate-200 border-b border-white/5 pb-2">Στοιχεία Βάρδιας</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-medium text-slate-400 mb-1">Όνομα Εργαζομένου</label>
-                        <input type="text" id="empName" placeholder="π.χ. Emre, Tania" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                        <input type="text" id="empName" placeholder="e.g. Emre, Tania" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-slate-400 mb-1">Ρόλος / Πόστο</label>
-                        <select id="empRole" class="w-full bg-[#0f172a] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition">
-                            <option value="Service / Azubi">Service / Azubi</option>
-                            <option value="Kitchen / Back of House">Kitchen / Back of House</option>
-                            <option value="Bar / Barista">Bar / Barista</option>
-                            <option value="Supervisor">Supervisor</option>
+                        <select id="empRole" class="w-full bg-[#0f172a] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition" onchange="renderHardSkills()">
+                            <option value="Σερβιτόρος / Azubi">Σερβιτόρος / Azubi</option>
+                            <option value="Μάγειρας / Κουζίνα">Μάγειρας / Κουζίνα</option>
+                            <option value="Barista / Bar">Barista / Bar</option>
                         </select>
                     </div>
                 </div>
             </section>
 
-            <!-- 5 CORE SKILLS -->
+            <!-- 5 CORE SKILLS (ΜΕ BARS ΚΑΘΟΔΗΓΗΣΗ) -->
             <section class="p-6 rounded-3xl glass-panel space-y-6">
-                <h2 class="text-lg font-semibold text-slate-200 border-b border-white/5 pb-2">Core Skills & Behaviors <span class="text-xs text-slate-400 font-normal">(1-100)</span></h2>
+                <div class="border-b border-white/5 pb-2">
+                    <h2 class="text-lg font-semibold text-slate-200">Core Skills & Behaviors <span class="text-xs text-slate-400 font-normal">(Μοντέλο Απλοποίησης)</span></h2>
+                    <p class="text-[11px] text-slate-400">Βασισμένο στα πρότυπα Forbes Travel Guide & Cornell Hospitality[span_4](start_span)[span_4](end_span).</p>
+                </div>
                 
                 <!-- Metric 1 -->
                 <div class="space-y-2">
                     <div class="flex justify-between text-sm">
                         <label class="font-medium text-slate-300">1. Επαγγελματισμός & Αποτελεσματικότητα</label>
-                        <span id="val_prof" class="text-amber-400 font-mono font-bold">50%</span>
+                        <span id="val_prof" class="text-amber-400 font-mono font-bold">3</span>
                     </div>
-                    <p class="text-xs text-slate-400">Συνέπεια, ποιότητα, κανόνες υγιεινής και εμφάνιση.</p>
-                    <input type="range" id="prof" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                    <p class="text-xs text-slate-400">Συνέπεια, ποιότητα εκτέλεσης, κανόνες υγιεινής, εμφάνιση και προσοχή στη λεπτομέρεια[span_5](start_span)[span_5](end_span).</p>
+                    <input type="range" id="prof" min="1" max="5" value="3" class="w-full accent-amber-500" oninput="updateData()">
+                    <div id="bars_prof" class="text-[11px] font-mono p-2.5 rounded-xl bg-black/20 border border-white/5 text-slate-400"></div>
                 </div>
 
                 <!-- Metric 2 -->
                 <div class="space-y-2">
                     <div class="flex justify-between text-sm">
-                        <label class="font-medium text-slate-300">2. Επικοινωνία & Πελατοκεντρική</label>
-                        <span id="val_comm" class="text-amber-400 font-mono font-bold">50%</span>
+                        <label class="font-medium text-slate-300">2. Επικοινωνία & Πελατοκεντρική Συμπεριφορά</label>
+                        <span id="val_comm" class="text-amber-400 font-mono font-bold">3</span>
                     </div>
-                    <p class="text-xs text-slate-400">Αντίληψη αναγκών, ενεργή επικοινωνία με πελάτες & ομάδα.</p>
-                    <input type="range" id="comm" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                    <p class="text-xs text-slate-400">Ενεργή λεκτική/μη λεκτική επικοινωνία, αντίληψη αναγκών πελάτη και ενσυναίσθηση[span_6](start_span)[span_6](end_span).</p>
+                    <input type="range" id="comm" min="1" max="5" value="3" class="w-full accent-amber-500" oninput="updateData()">
+                    <div id="bars_comm" class="text-[11px] font-mono p-2.5 rounded-xl bg-black/20 border border-white/5 text-slate-400"></div>
                 </div>
 
                 <!-- Metric 3 -->
                 <div class="space-y-2">
                     <div class="flex justify-between text-sm">
                         <label class="font-medium text-slate-300">3. Ομαδικό Πνεύμα & Συνεργασία</label>
-                        <span id="val_team" class="text-amber-400 font-mono font-bold">50%</span>
+                        <span id="val_team" class="text-amber-400 font-mono font-bold">3</span>
                     </div>
-                    <p class="text-xs text-slate-400">Αρμονική συνεργασία, υποστήριξη της ομάδας, έλλειψη εγωισμού.</p>
-                    <input type="range" id="team" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                    <p class="text-xs text-slate-400">Αρμονική συνεργασία με συναδέλφους, υποστήριξη της ομάδας, ταπεινοφροσύνη και αποδοχή κριτικής[span_7](start_span)[span_7](end_span).</p>
+                    <input type="range" id="team" min="1" max="5" value="3" class="w-full accent-amber-500" oninput="updateData()">
+                    <div id="bars_team" class="text-[11px] font-mono p-2.5 rounded-xl bg-black/20 border border-white/5 text-slate-400"></div>
                 </div>
 
                 <!-- Metric 4 -->
                 <div class="space-y-2">
                     <div class="flex justify-between text-sm">
                         <label class="font-medium text-slate-300">4. Πρωτοβουλία & Προσαρμοστικότητα</label>
-                        <span id="val_init" class="text-amber-400 font-mono font-bold">50%</span>
+                        <span id="val_init" class="text-amber-400 font-mono font-bold">3</span>
                     </div>
-                    <p class="text-xs text-slate-400">Ανάληψη ευθυνών, διάθεση για μάθηση, ευελιξία.</p>
-                    <input type="range" id="init" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                    <p class="text-xs text-slate-400">Διάθεση για μάθηση, ανάληψη πρωτοβουλιών, ανταπόκριση σε απρόβλεπτες καταστάσεις και ευελιξία[span_8](start_span)[span_8](end_span).</p>
+                    <input type="range" id="init" min="1" max="5" value="3" class="w-full accent-amber-500" oninput="updateData()">
+                    <div id="bars_init" class="text-[11px] font-mono p-2.5 rounded-xl bg-black/20 border border-white/5 text-slate-400"></div>
                 </div>
 
                 <!-- Metric 5 -->
                 <div class="space-y-2">
                     <div class="flex justify-between text-sm">
-                        <label class="font-medium text-slate-300">5. Διαχείριση Προβλημάτων</label>
-                        <span id="val_prob" class="text-amber-400 font-mono font-bold">50%</span>
+                        <label class="font-medium text-slate-300">5. Διαχείριση Προβλημάτων & Κρίσεων</label>
+                        <span id="val_prob" class="text-amber-400 font-mono font-bold">3</span>
                     </div>
-                    <p class="text-xs text-slate-400">Αναγνώριση κρίσεων, εύρεση λύσεων υπό πίεση.</p>
-                    <input type="range" id="prob" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                    <p class="text-xs text-slate-400">Αντίδραση σε λάθη, διαχείριση παραπόνων πελατών και αντοχή υπό συνθήκες έντονης πίεσης[span_9](start_span)[span_9](end_span).</p>
+                    <input type="range" id="prob" min="1" max="5" value="3" class="w-full accent-amber-500" oninput="updateData()">
+                    <div id="bars_prob" class="text-[11px] font-mono p-2.5 rounded-xl bg-black/20 border border-white/5 text-slate-400"></div>
                 </div>
             </section>
 
-            <!-- RED FLAGS -->
+            <!-- ΤΕΧΝΙΚΕΣ ΔΕΞΙΟΤΗΤΕΣ (HARD SKILLS) -->
+            <section class="p-6 rounded-3xl glass-panel space-y-4">
+                <div class="border-b border-white/5 pb-2">
+                    <h2 class="text-lg font-semibold text-slate-200">Τεχνικές Δεξιότητες (Hard Skills Checklists)[span_10](start_span)[span_10](end_span)</h2>
+                    <p class="text-xs text-slate-400">Αξιολόγηση εκτέλεσης καθηκόντων ανά θέση εργασίας[span_11](start_span)[span_11](end_span).</p>
+                </div>
+                <div id="hardSkillsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <!-- Dynamic Checklists -->
+                </div>
+            </section>
+
+            <!-- CRITICAL RED FLAGS -->
             <section class="p-6 rounded-3xl glass-panel space-y-4 border border-red-500/10 bg-red-500/[0.01]">
-                <h2 class="text-lg font-semibold text-red-400 border-b border-red-500/10 pb-2">Critical Red Flags</h2>
+                <h2 class="text-lg font-semibold text-red-400 border-b border-red-500/10 pb-2">Critical Red Flags[span_12](start_span)[span_12](end_span)</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div id="card_toxic" class="p-4 rounded-2xl border glass-card border-white/5 transition">
                         <div class="flex items-center justify-between">
                             <div>
                                 <span class="block text-sm font-bold text-slate-200">Τοξικότητα (VETO)</span>
-                                <span class="text-[11px] text-slate-400">Αρνητική συμπεριφορά στην ομάδα.</span>
+                                <span class="text-[11px] text-slate-400">Αρνητική συμπεριφορά που βλάπτει την ομάδα[span_13](start_span)[span_13](end_span).</span>
                             </div>
                             <input type="checkbox" id="toxic" class="w-5 h-5 accent-red-500 cursor-pointer" onchange="updateData()">
                         </div>
@@ -147,7 +149,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <span class="block text-sm font-bold text-slate-200">Έλλειψη Δέσμευσης</span>
-                                <span class="text-[11px] text-slate-400">Αδιαφορία, παθητικότητα.</span>
+                                <span class="text-[11px] text-slate-400">Αδιαφορία, παθητικότητα, έλλειψη κινήτρου[span_14](start_span)[span_14](end_span).</span>
                             </div>
                             <input type="checkbox" id="lack" class="w-5 h-5 accent-red-500 cursor-pointer" onchange="updateData()">
                         </div>
@@ -155,39 +157,141 @@
                 </div>
             </section>
 
-            <button onclick="submitEval()" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold tracking-wide rounded-2xl shadow-lg transition transform active:scale-95">
-                Αποθήκευση Αξιολόγησης (Submit)
+            <!-- ΑΝΑΤΡΟΦΟΔΟΤΗΣΗ, ΑΥΤΟΑΞΙΟΛΟΓΗΣΗ & ΣΥΝΔΕΣΗ ΜΕ ΕΚΠΑΙΔΕΥΣΗ -->
+            <section class="p-6 rounded-3xl glass-panel space-y-4">
+                <h2 class="text-lg font-semibold text-slate-200 border-b border-white/5 pb-2">Ανατροφοδότηση & Ανάπτυξη[span_15](start_span)[span_15](end_span)</h2>
+                <div class="space-y-4">
+                    <div class="p-4 rounded-2xl border glass-card border-white/5 flex items-center justify-between">
+                        <div>
+                            <span class="block text-sm font-bold text-slate-200">Πραγματοποιήθηκε Αυτοαξιολόγηση</span>
+                            <span class="text-[11px] text-slate-400">Ενεργή συμμετοχή και στοχοθεσία από τον εργαζόμενο[span_16](start_span)[span_16](end_span).</span>
+                        </div>
+                        <input type="checkbox" id="selfEval" class="w-5 h-5 accent-amber-500 cursor-pointer" onchange="updateData()">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Ποιοτικά Σχόλια & Παραδείγματα Συμπεριφοράς (Κρίσιμο για BARS)[span_17](start_span)[span_17](end_span)</label>
+                        <textarea id="qualitativeComments" rows="3" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition" placeholder="Κατάγράψτε συγκεκριμένα γεγονότα ή παραδείγματα από τη βάρδια...[span_18](start_span)[span_18](end_span)"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Προσωπικοί Στόχοι Ανάπτυξης[span_19](start_span)[span_19](end_span)</label>
+                        <textarea id="devGoals" rows="2" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition" placeholder="Τι πρέπει να βελτιωθεί μέχρι την επόμενη συνάντηση...[span_20](start_span)[span_20](end_span)"></textarea>
+                    </div>
+
+                    <!-- ΔΥΝΑΜΙΚΕΣ ΠΡΟΤΑΣΕΙΣ ΕΚΠΑΙΔΕΥΣΗΣ -->
+                    <div id="trainingSection" class="p-4 rounded-2xl bg-indigo-950/20 border border-indigo-500/20 hidden">
+                        <span class="block text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">💡 Προτεινόμενες Ενότητες Εκπαίδευσης[span_21](start_span)[span_21](end_span)</span>
+                        <ul id="trainingList" class="text-xs text-slate-300 list-disc list-inside space-y-1"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <button onclick="submitEval()" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold tracking-wide rounded-2xl shadow-lg transition transform active:scale-95">
+                Αποθήκευση & Ολοκλήρωση Αξιολόγησης
             </button>
         </div>
 
-        <!-- SIDEBAR: LIVE JSON PREVIEW -->
+        <!-- SIDEBAR JSON PAYLOAD -->
         <div class="space-y-6">
             <section class="p-6 rounded-3xl glass-panel sticky top-6">
                 <div class="flex items-center justify-between border-b border-white/5 pb-3 mb-4">
                     <h2 class="text-md font-bold tracking-wide text-slate-300">Live JSON Payload</h2>
                     <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                 </div>
-                <pre id="jsonPreview" class="text-[11px] bg-black/40 p-4 rounded-xl font-mono overflow-x-auto border border-white/5 text-emerald-400 max-h-[400px]"></pre>
+                <pre id="jsonPreview" class="text-[11px] bg-black/40 p-4 rounded-xl font-mono overflow-x-auto border border-white/5 text-emerald-400 max-h-[500px]"></pre>
                 <div id="vetoAlert" class="hidden mt-4 p-3 bg-red-900/30 border border-red-500/50 rounded-xl text-center">
-                    <p class="text-xs font-bold text-red-400 uppercase tracking-widest">⚠️ VETO TRIGGERED: TOXICITY ALERT</p>
+                    <p class="text-xs font-bold text-red-400 uppercase tracking-widest animate-pulse">⚠️ VETO TRIGGERED: TOXICITY ALERT[span_22](start_span)[span_22](end_span)</p>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- CORE LOGIC SCRIPT -->
     <script>
+        // Πλήρη Hard Skills βάσει της ενότητας 2.2 της έκθεσης[span_23](start_span)[span_23](end_span)
+        const hardSkillsRepo = {
+            "Σερβιτόρος / Azubi": ["Γνώση Μενού & Πιάτων", "Σωστό Σερβίρισμα", "Διαχείριση Παραγγελιών", "Χρήση POS / Σύστημα"],
+            "Μάγειρας / Κουζίνα": ["Τεχνικές Μαγειρικής", "Κανόνες Υγιεινής & Ασφάλειας", "Διαχείριση Αποθεμάτων", "Καθαριότητα Πόστου"],
+            "Barista / Bar": ["Γνώση Συνταγών / Ποτών", "Τεχνική Απόσταξης & Latte Art", "Διαχείριση Αναλωσίμων", "Καθαριότητα Μηχανών"]
+        };
+
+        // BARS Παραδείγματα Συμπεριφοράς βάσει της έκθεσης[span_24](start_span)[span_24](end_span)
+        const barsGuides = {
+            prof: [
+                "1: Συχνά καθυστερεί, αγνοεί κανόνες υγιεινής/εμφάνισης και δείχνει αδιαφορία στη λεπτομέρεια[span_25](start_span)[span_25](end_span).",
+                "2: Εκτελεί τα βασικά αλλά χρειάζεται συνεχή επίβλεψη για τη διατήρηση των προτύπων[span_26](start_span)[span_26](end_span).",
+                "3: Συνεπής, τηρεί απόλυτα τους κανόνες, ποιοτικός και αποτελεσματικός στη βάρδια[span_27](start_span)[span_27](end_span).",
+                "4: Ξεπερνά τα πρότυπα, δείχνει εξαιρετική προσοχή στη λεπτομέρεια και βοηθά στη ροή[span_28](start_span)[span_28](end_span).",
+                "5: Ολοκληρώνει πάντα τις εργασίες πριν την προθεσμία, παραδίδει τέλεια ποιότητα και αναλαμβάνει επιπλέον καθήκοντα[span_29](start_span)[span_29](end_span)."
+            ],
+            comm: [
+                "1: Ελλιπής επικοινωνία με πελάτες ή ομάδα, δημιουργεί παρεξηγήσεις[span_30](start_span)[span_30](end_span).",
+                "2: Μιλάει τυπικά, αλλά χάνει τη μη λεκτική επικοινωνία και τις ανάγκες των γύρω του[span_31](start_span)[span_31](end_span).",
+                "3: Ακούει ενεργά, μεταφέρει πληροφορίες με σαφήνεια και εξυπηρετεί πελατοκεντρικά[span_32](start_span)[span_32](end_span).",
+                "4: Υψηλή ενσυναίσθηση, προβλέπει τις ανάγκες των πελατών πριν εκδηλωθούν[span_33](start_span)[span_33](end_span).",
+                "5: Υπόδειγμα επικοινωνίας, επιλύει άμεσα κάθε παρεξήγηση, δημιουργεί ιδανική σύνδεση με τον πελάτη[span_34](start_span)[span_34](end_span)."
+            ],
+            team: [
+                "1: Ατομικιστική συμπεριφορά, αρνείται να βοηθήσει την ομάδα ή να δεχτεί κριτική[span_35](start_span)[span_35](end_span).",
+                "2: Συνεργάζεται μόνο αν του ζητηθεί ρητά, δείχνει στοιχεία εγωισμού[span_36](start_span)[span_36](end_span).",
+                "3: Αρμονική συνεργασία, βοηθάει τους συναδέλφους και δέχεται feedback[span_37](start_span)[span_37](end_span).",
+                "4: Υποστηρίζει ενεργά την ομάδα, συμβάλλει θετικά στο κλίμα και δείχνει ταπεινοφροσύνη[span_38](start_span)[span_38](end_span).",
+                "5: Πυλώνας της ομάδας, εμπνέει τους συναδέλφους, εκμηδενίζει εντάσεις και λειτουργεί με απόλυτο ομαδικό πνεύμα[span_39](start_span)[span_39](end_span)."
+            ],
+            init: [
+                "1: Παθητική στάση, περιμένει μόνιμα εντολές, καμία διάθεση για μάθηση[span_40](start_span)[span_40](end_span).",
+                "2: Αντιδρά αργά στις αλλαγές, δείχνει χαμηλό ενδιαφέρον για νέες δεξιότητες[span_41](start_span)[span_41](end_span).",
+                "3: Αναλαμβάνει πρωτοβουλίες, προσαρμόζεται εύκολα και δείχνει ενδιαφέρον για εξέλιξη[span_42](start_span)[span_42](end_span).",
+                "4: Ψάχνει τρόπους να βελτιωθεί, προσαρμόζεται αμέσως σε απρόβλεπτες αυξήσεις πελατών[span_43](start_span)[span_43](end_span).",
+                "5: Απόλυτα ευέλικτος σε κρίσεις, αναζητά συνεχώς νέα γνώση, ηγείται στην καινοτομία και τις λύσεις[span_44](start_span)[span_44](end_span)."
+            ],
+            prob: [
+                "1: Πανικοβάλλεται ή αδρανεί σε προβλήματα (π.χ. λάθος παραγγελία), μεταφέρει την πίεση[span_45](start_span)[span_45](end_span).",
+                "2: Αναγνωρίζει το πρόβλημα αλλά περιμένει από τον Supervisor να δώσει τη λύση[span_46](start_span)[span_46](end_span).",
+                "3: Αντιδρά ψύχραιμα, βρίσκει ικανοποιητικές λύσεις και διαχειρίζεται την πίεση[span_47](start_span)[span_47](end_span).",
+                "4: Επιλύει παράπονα πελατών με ευγένεια, μετατρέποντας το πρόβλημα σε θετική εμπειρία[span_48](start_span)[span_48](end_span).",
+                "5: Απόλυτος έλεγχος κρίσεων, προβλέπει και εξουδετερώνει προβλήματα πριν επηρεάσουν τη λειτουργία[span_49](start_span)[span_49](end_span)."
+            ]
+        };
+
         const state = {
             employeeName: '',
             evaluatedBy: 'Alexandros Chatziliadis',
-            role: 'Service / Azubi',
-            metrics: { professionalism_efficiency: 50, communication_guest_centric: 50, teamwork_collaboration: 50, initiative_adaptability: 50, problem_solving: 50 },
-            redFlags: { toxicity_veto: false, lack_of_commitment: false }
+            role: 'Σερβιτόρος / Azubi',
+            metrics: { professionalism_efficiency: 3, communication_guest_centric: 3, teamwork_collaboration: 3, initiative_adaptability: 3, problem_solving: 3 },
+            hardSkills: {},
+            redFlags: { toxicity_veto: false, lack_of_commitment: false },
+            selfEvaluationPerformed: false,
+            qualitativeFeedback: '',
+            developmentGoals: '',
+            recommendedTraining: []
         };
+
+        function renderHardSkills() {
+            const role = document.getElementById('empRole').value;
+            state.role = role;
+            const container = document.getElementById('hardSkillsContainer');
+            container.innerHTML = '';
+            state.hardSkills = {};
+            
+            hardSkillsRepo[role].forEach((skill, index) => {
+                state.hardSkills[skill] = false;
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5";
+                div.innerHTML = `
+                    <span class="text-xs text-slate-300">${skill}</span>
+                    <input type="checkbox" id="skill_${index}" class="w-4 h-4 accent-amber-500 cursor-pointer" onchange="toggleHardSkill('${skill}', this.checked)">
+                `;
+                container.appendChild(div);
+            });
+            updateData();
+        }
+
+        function toggleHardSkill(skill, isChecked) {
+            state.hardSkills[skill] = isChecked;
+            updateData();
+        }
 
         function updateData() {
             state.employeeName = document.getElementById('empName').value;
-            state.role = document.getElementById('empRole').value;
             
             state.metrics.professionalism_efficiency = parseInt(document.getElementById('prof').value);
             state.metrics.communication_guest_centric = parseInt(document.getElementById('comm').value);
@@ -197,36 +301,72 @@
             
             state.redFlags.toxicity_veto = document.getElementById('toxic').checked;
             state.redFlags.lack_of_commitment = document.getElementById('lack').checked;
+            state.selfEvaluationPerformed = document.getElementById('selfEval').checked;
+            state.qualitativeFeedback = document.getElementById('qualitativeComments').value;
+            state.developmentGoals = document.getElementById('devGoals').value;
 
-            // UI Updates
-            document.getElementById('val_prof').innerText = state.metrics.professionalism_efficiency + '%';
-            document.getElementById('val_comm').innerText = state.metrics.communication_guest_centric + '%';
-            document.getElementById('val_team').innerText = state.metrics.teamwork_collaboration + '%';
-            document.getElementById('val_init').innerText = state.metrics.initiative_adaptability + '%';
-            document.getElementById('val_prob').innerText = state.metrics.problem_solving + '%';
+            // Update BARS Text Live
+            document.getElementById('val_prof').innerText = state.metrics.professionalism_efficiency;
+            document.getElementById('bars_prof').innerText = barsGuides.prof[state.metrics.professionalism_efficiency - 1];
+            
+            document.getElementById('val_comm').innerText = state.metrics.communication_guest_centric;
+            document.getElementById('bars_comm').innerText = barsGuides.comm[state.metrics.communication_guest_centric - 1];
+            
+            document.getElementById('val_team').innerText = state.metrics.teamwork_collaboration;
+            document.getElementById('bars_team').innerText = barsGuides.team[state.metrics.teamwork_collaboration - 1];
+            
+            document.getElementById('val_init').innerText = state.metrics.initiative_adaptability;
+            document.getElementById('bars_init').innerText = barsGuides.init[state.metrics.initiative_adaptability - 1];
+            
+            document.getElementById('val_prob').innerText = state.metrics.problem_solving;
+            document.getElementById('bars_prob').innerText = barsGuides.prob[state.metrics.problem_solving - 1];
 
-            // Red Flag UI Toggles
+            // Red Flags UI
             document.getElementById('card_toxic').className = state.redFlags.toxicity_veto ? 'p-4 rounded-2xl border bg-red-500/10 border-red-500/40 transition' : 'p-4 rounded-2xl border glass-card border-white/5 transition';
             document.getElementById('card_lack').className = state.redFlags.lack_of_commitment ? 'p-4 rounded-2xl border bg-red-500/10 border-red-500/40 transition' : 'p-4 rounded-2xl border glass-card border-white/5 transition';
-            
-            // Veto Warning
             document.getElementById('vetoAlert').style.display = state.redFlags.toxicity_veto ? 'block' : 'none';
 
-            // Print Live JSON
+            // Σύνδεση με Εκπαίδευση (Dynamic Training Recommendations)[span_50](start_span)[span_50](end_span)
+            generateTrainingRecommendations();
+
             document.getElementById('jsonPreview').innerText = JSON.stringify(state, null, 2);
         }
 
+        function generateTrainingRecommendations() {
+            const list = document.getElementById('trainingList');
+            const section = document.getElementById('trainingSection');
+            list.innerHTML = '';
+            state.recommendedTraining = [];
+
+            if (state.metrics.professionalism_efficiency <= 2) state.recommendedTraining.push("Σεμινάριο Προτύπων Ποιότητας & Υγιεινής (Forbes Standards)[span_51](start_span)[span_51](end_span)");
+            if (state.metrics.communication_guest_centric <= 2) state.recommendedTraining.push("Εκπαίδευση στην Ενεργή Ακρόαση & Διαχείριση Πελατών (Cornell Research)[span_52](start_span)[span_52](end_span)");
+            if (state.metrics.teamwork_collaboration <= 2) state.recommendedTraining.push("Workshop Ομαδικότητας, Συνεργασίας & Διαχείρισης Feedback[span_53](start_span)[span_53](end_span)");
+            if (state.metrics.initiative_adaptability <= 2) state.recommendedTraining.push("Micro-learning: Ανάληψη Πρωτοβουλιών & Διαχείριση Αλλαγών στη Βάρδια[span_54](start_span)[span_54](end_span)");
+            if (state.metrics.problem_solving <= 2) state.recommendedTraining.push("Σεμινάριο Διαχείρισης Παραπόνων & Κρίσεων υπό Πίεση[span_55](start_span)[span_55](end_span)");
+
+            if (state.recommendedTraining.length > 0) {
+                section.classList.remove('hidden');
+                state.recommendedTraining.forEach(t => {
+                    const li = document.createElement('li');
+                    li.innerText = t;
+                    list.appendChild(li);
+                });
+            } else {
+                section.classList.add('hidden');
+            }
+        }
+
         function submitEval() {
-            alert('Η αξιολόγηση για τον/την ' + (state.employeeName || 'Υπάλληλο') + ' δημιουργήθηκε τοπικά! Το JSON payload είναι έτοιμο.');
+            alert('Η Enterprise αξιολόγηση ολοκληρώθηκε! Το payload περιέχει BARS, Hard Skills και Training Recommendations.');
             console.log(state);
         }
 
-        // Listeners for inputs
         document.getElementById('empName').addEventListener('input', updateData);
-        document.getElementById('empRole').addEventListener('change', updateData);
-        
-        // Init run
-        updateData();
+        document.getElementById('qualitativeComments').addEventListener('input', updateData);
+        document.getElementById('devGoals').addEventListener('input', updateData);
+
+        // Init Run
+        renderHardSkills();
     </script>
 </body>
 </html>
