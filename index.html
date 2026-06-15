@@ -15,10 +15,9 @@
         .enterprise-card {
             background: #ffffff;
             border: 3px solid #1a1a1a;
-            box-shadow: 0 8px 0px #1a1a1a;
+            box-shadow: 0 6px 0px #1a1a1a;
         }
         .accent-text { color: #9e5738; }
-        .accent-border { border-color: #9e5738; }
         
         input[type="range"] {
             -webkit-appearance: none;
@@ -41,7 +40,6 @@
 </head>
 <body class="min-h-screen p-3 md:p-8 font-semibold">
 
-    <!-- HEADER -->
     <header class="max-w-6xl mx-auto mb-10 flex flex-col sm:flex-row items-center justify-between p-6 bg-white rounded-2xl border-3 border-black shadow-[4px_4px_0px_#1a1a1a] gap-4">
         <div class="flex items-center gap-4">
             <div class="w-14 h-14 rounded-xl border-3 border-black bg-white flex items-center justify-center shadow-sm">
@@ -55,7 +53,6 @@
             </div>
         </div>
         
-        <!-- LIVE FORBES KΡΙ BADGE -->
         <div class="flex items-center gap-3 bg-black text-white px-5 py-3 rounded-xl">
             <div class="text-right">
                 <span class="block text-[10px] uppercase tracking-widest text-neutral-400 font-black font-mono">FORBES WEIGHTED SCORE</span>
@@ -65,13 +62,10 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- FORM INTERFACE -->
         <div class="lg:col-span-2 space-y-8">
             
-            <!-- ΣΤΟΙΧΕΙΑ ΒΑΡΔΙΑΣ -->
             <section class="p-6 rounded-2xl enterprise-card space-y-4">
                 <span class="text-xs uppercase tracking-widest accent-text font-black block font-mono">01 / OPERATIONS</span>
                 <h2 class="text-xl font-black text-black border-b-3 border-neutral-100 pb-2">Στοιχεία Βάρδιας</h2>
@@ -91,83 +85,74 @@
                 </div>
             </section>
 
-            <!-- 5 CORE SKILLS -->
             <section class="p-6 rounded-2xl enterprise-card space-y-6">
                 <div class="border-b-3 border-neutral-100 pb-3">
                     <span class="text-xs uppercase tracking-widest accent-text font-black block font-mono">02 / CORE PERFORMANCE</span>
                     <h2 class="text-xl font-black text-black">Core Skills & Behaviors (BARS)</h2>
-                    <p class="text-xs font-bold text-neutral-700 mt-0.5">Ευθυγραμμισμένο με Forbes Travel Guide και Cornell Hospitality[span_1](start_span)[span_1](end_span).</p>
+                    <p class="text-xs font-bold text-neutral-700 mt-0.5">Ευθυγραμμισμένο με Forbes Travel Guide και Cornell Hospitality.</p>
                 </div>
                 
-                <!-- Metric 1 -->
                 <div class="space-y-2 p-4 bg-neutral-50 rounded-xl border-2 border-black">
                     <div class="flex justify-between items-center">
                         <label class="font-black text-black text-base">1. Επαγγελματισμός & Αποτελεσματικότητα</label>
                         <span id="val_prof" class="accent-text font-mono font-black text-2xl bg-white px-3 py-1 rounded-lg border-2 border-black">3</span>
                     </div>
-                    <p class="text-xs font-bold text-neutral-700">Συνέπεια, ποιότητα εκτέλεσης, κανόνες υγιεινής, εμφάνιση και προσοχή στη λεπτομέρεια[span_2](start_span)[span_2](end_span).</p>
+                    <p class="text-xs font-bold text-neutral-700">Συνέπεια, ποιότητα εκτέλεσης, κανόνες υγιεινής, εμφάνιση και προσοχή στη λεπτομέρεια.</p>
                     <input type="range" id="prof" min="1" max="5" value="3" class="w-full my-2" oninput="updateData()">
                     <div id="bars_prof" class="text-xs font-black p-3 rounded-lg bg-white text-black border-2 border-black shadow-sm"></div>
                 </div>
 
-                <!-- Metric 2 -->
                 <div class="space-y-2 p-4 bg-neutral-50 rounded-xl border-2 border-black">
                     <div class="flex justify-between items-center">
                         <label class="font-black text-black text-base">2. Επικοινωνία & Πελατοκεντρική Συμπεριφορά</label>
                         <span id="val_comm" class="accent-text font-mono font-black text-2xl bg-white px-3 py-1 rounded-lg border-2 border-black">3</span>
                     </div>
-                    <p class="text-xs font-bold text-neutral-700">Ενεργή λεκτική/μη λεκτική επικοινωνία, αντίληψη αναγκών πελάτη και ενσυναίσθηση[span_3](start_span)[span_3](end_span).</p>
+                    <p class="text-xs font-bold text-neutral-700">Ενεργή λεκτική/μη λεκτική επικοινωνία, αντίληψη αναγκών πελάτη και ενσυναίσθηση.</p>
                     <input type="range" id="comm" min="1" max="5" value="3" class="w-full my-2" oninput="updateData()">
                     <div id="bars_comm" class="text-xs font-black p-3 rounded-lg bg-white text-black border-2 border-black shadow-sm"></div>
                 </div>
 
-                <!-- Metric 3 -->
                 <div class="space-y-2 p-4 bg-neutral-50 rounded-xl border-2 border-black">
                     <div class="flex justify-between items-center">
                         <label class="font-black text-black text-base">3. Ομαδικό Πνεύμα & Συνεργασία</label>
                         <span id="val_team" class="accent-text font-mono font-black text-2xl bg-white px-3 py-1 rounded-lg border-2 border-black">3</span>
                     </div>
-                    <p class="text-xs font-bold text-neutral-700">Αρμονική συνεργασία με συναδέλφους, υποστήριξη της ομάδας, ταπεινοφροσύνη και αποδοχή κριτικής[span_4](start_span)[span_4](end_span).</p>
+                    <p class="text-xs font-bold text-neutral-700">Αρμονική συνεργασία με συναδέλφους, υποστήριξη της ομάδας, ταπεινοφροσύνη και αποδοχή κριτικής.</p>
                     <input type="range" id="team" min="1" max="5" value="3" class="w-full my-2" oninput="updateData()">
                     <div id="bars_team" class="text-xs font-black p-3 rounded-lg bg-white text-black border-2 border-black shadow-sm"></div>
                 </div>
 
-                <!-- Metric 4 -->
                 <div class="space-y-2 p-4 bg-neutral-50 rounded-xl border-2 border-black">
                     <div class="flex justify-between items-center">
                         <label class="font-black text-black text-base">4. Πρωτοβουλία & Προσαρμοστικότητα</label>
                         <span id="val_init" class="accent-text font-mono font-black text-2xl bg-white px-3 py-1 rounded-lg border-2 border-black">3</span>
                     </div>
-                    <p class="text-xs font-bold text-neutral-700">Διάθεση για μάθηση, ανάληψη πρωτοβουλιών, ανταπόκριση σε απρόβλεπτες καταστάσεις και ευελιξία[span_5](start_span)[span_5](end_span).</p>
+                    <p class="text-xs font-bold text-neutral-700">Διάθεση για μάθηση, ανάληψη πρωτοβουλιών, ανταπόκριση σε απρόβλεπτες καταστάσεις και ευελιξία.</p>
                     <input type="range" id="init" min="1" max="5" value="3" class="w-full my-2" oninput="updateData()">
                     <div id="bars_init" class="text-xs font-black p-3 rounded-lg bg-white text-black border-2 border-black shadow-sm"></div>
                 </div>
 
-                <!-- Metric 5 -->
                 <div class="space-y-2 p-4 bg-neutral-50 rounded-xl border-2 border-black">
                     <div class="flex justify-between items-center">
                         <label class="font-black text-black text-base">5. Διαχείριση Προβλημάτων & Κρίσεων</label>
                         <span id="val_prob" class="accent-text font-mono font-black text-2xl bg-white px-3 py-1 rounded-lg border-2 border-black">3</span>
                     </div>
-                    <p class="text-xs font-bold text-neutral-700">Αντίδραση σε λάθη, διαχείριση παραπόνων πελατών και αντοχή υπό συνθήκες έντονης πίεσης[span_6](start_span)[span_6](end_span).</p>
+                    <p class="text-xs font-bold text-neutral-700">Αντίδραση σε λάθη, διαχείριση παραπόνων πελατών και αντοχή υπό συνθήκες έντονης πίεσης.</p>
                     <input type="range" id="prob" min="1" max="5" value="3" class="w-full my-2" oninput="updateData()">
                     <div id="bars_prob" class="text-xs font-black p-3 rounded-lg bg-white text-black border-2 border-black shadow-sm"></div>
                 </div>
             </section>
 
-            <!-- HARD SKILLS -->
             <section class="p-6 rounded-2xl enterprise-card space-y-4">
                 <div class="border-b-3 border-neutral-100 pb-2">
                     <span class="text-xs uppercase tracking-widest accent-text font-black block font-mono">03 / TECHNICAL KNOWLEDGE</span>
                     <h2 class="text-xl font-black text-black">Τεχνικές Δεξιότητες (Hard Skills Checklist)</h2>
-                    <p class="text-xs font-bold text-neutral-600">Αξιολόγηση τεχνικής επάρκειας ανά θέση (Αποτελεί το 25% της τελικής βαθμολογίας)[span_7](start_span)[span_7](end_span).</p>
+                    <p class="text-xs font-bold text-neutral-600">Αξιολόγηση τεχνικής επάρκειας ανά θέση (Αποτελεί το 25% της τελικής βαθμολογίας).</p>
                 </div>
                 <div id="hardSkillsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <!-- Checklists -->
-                </div>
+                    </div>
             </section>
 
-            <!-- RED FLAGS -->
             <section class="p-6 rounded-2xl enterprise-card space-y-4 border-3 border-red-600 bg-red-50/40">
                 <span class="text-xs uppercase tracking-widest text-red-700 font-black block font-mono">04 / COMPLIANCE</span>
                 <h2 class="text-xl font-black text-red-950 border-b-2 border-red-200 pb-2">Critical Red Flags</h2>
@@ -176,7 +161,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <span class="block text-sm font-black text-red-600">Τοξικότητα (VETO)</span>
-                                <span class="text-xs font-bold text-black">Αρνητική συμπεριφορά που βλάπτει άμεσα την ομάδα[span_8](start_span)[span_8](end_span).</span>
+                                <span class="text-xs font-bold text-black">Αρνητική συμπεριφορά που βλάπτει άμεσα την ομάδα.</span>
                             </div>
                             <input type="checkbox" id="toxic" class="w-6 h-6 accent-red-600 cursor-pointer" onchange="updateData()">
                         </div>
@@ -185,7 +170,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <span class="block text-sm font-black text-black">Έλλειψη Δέσμευσης</span>
-                                <span class="text-xs font-bold text-neutral-800">Αδιαφορία, παθητικότητα, έλλειψη κινήτρου[span_9](start_span)[span_9](end_span).</span>
+                                <span class="text-xs font-bold text-neutral-800">Αδιαφορία, παθητικότητα, έλλειψη κινήτρου.</span>
                             </div>
                             <input type="checkbox" id="lack" class="w-6 h-6 accent-red-600 cursor-pointer" onchange="updateData()">
                         </div>
@@ -193,7 +178,6 @@
                 </div>
             </section>
 
-            <!-- FEEDBACK & GROWTH -->
             <section class="p-6 rounded-2xl enterprise-card space-y-4">
                 <div class="border-b-3 border-neutral-100 pb-2">
                     <span class="text-xs uppercase tracking-widest accent-text font-black block font-mono">05 / FUTURE DEV</span>
@@ -203,20 +187,19 @@
                     <div class="p-4 rounded-xl bg-neutral-50 border-3 border-black flex items-center justify-between">
                         <div>
                             <span class="block text-sm font-black text-black">Πραγματοποιήθηκε Αυτοαξιολόγηση</span>
-                            <span class="text-xs font-bold text-neutral-800">Ενεργή συμμετοχή και στοχοθεσία από τον εργαζόμενο[span_10](start_span)[span_10](end_span).</span>
+                            <span class="text-xs font-bold text-neutral-800">Ενεργή συμμετοχή και στοχοθεσία από τον εργαζόμενο.</span>
                         </div>
                         <input type="checkbox" id="selfEval" class="w-6 h-6 accent-[#9e5738] cursor-pointer" onchange="updateData()">
                     </div>
                     <div>
                         <label class="block text-xs font-black text-black mb-1">Ποιοτικά Σχόλια & Συγκεκριμένα Παραδείγματα (BARS)</label>
-                        <textarea id="qualitativeComments" rows="3" class="w-full bg-neutral-50 border-3 border-black rounded-xl px-4 py-2.5 text-sm font-bold text-black focus:outline-none focus:border-[#9e5738] transition" placeholder="Καταγράψτε συγκεκριμένα γεγονότα από τη βάρδια...[span_11](start_span)[span_11](end_span)"></textarea>
+                        <textarea id="qualitativeComments" rows="3" class="w-full bg-neutral-50 border-3 border-black rounded-xl px-4 py-2.5 text-sm font-bold text-black focus:outline-none focus:border-[#9e5738] transition" placeholder="Καταγράψτε συγκεκριμένα γεγονότα από τη βάρδια..."></textarea>
                     </div>
                     <div>
                         <label class="block text-xs font-black text-black mb-1">Προσωπικοί Στόχοι Ανάπτυξης</label>
-                        <textarea id="devGoals" rows="2" class="w-full bg-neutral-50 border-3 border-black rounded-xl px-4 py-2.5 text-sm font-bold text-black focus:outline-none focus:border-[#9e5738] transition" placeholder="Τι πρέπει να βελτιωθεί μέχρι την επόμενη αξιολόγηση...[span_12](start_span)[span_12](end_span)"></textarea>
+                        <textarea id="devGoals" rows="2" class="w-full bg-neutral-50 border-3 border-black rounded-xl px-4 py-2.5 text-sm font-bold text-black focus:outline-none focus:border-[#9e5738] transition" placeholder="Τι πρέπει να βελτιωθεί μέχρι την επόμενη αξιολόγηση..."></textarea>
                     </div>
 
-                    <!-- TRAINING RECOMMENDATIONS -->
                     <div id="trainingSection" class="p-4 rounded-xl bg-[#9e5738]/10 border-3 border-[#9e5738]/40 hidden">
                         <span class="block text-sm font-black accent-text uppercase tracking-wider mb-2">💡 Προτεινόμενες Ενότητες Εκπαίδευσης</span>
                         <ul id="trainingList" class="text-xs font-black text-black list-disc list-inside space-y-1"></ul>
@@ -229,14 +212,12 @@
             </button>
         </div>
 
-        <!-- SIDEBAR PAYLOAD & SERVQUAL -->
         <div class="space-y-6">
             
-            <!-- SERVQUAL WIDGET -->
             <section class="p-6 rounded-2xl border-3 border-black bg-black text-white shadow-[4px_4px_0px_#1a1a1a]">
                 <div class="border-b border-neutral-800 pb-3 mb-4">
                     <h3 class="text-sm font-black tracking-wider uppercase text-amber-400 font-mono">SERVQUAL Dimensions</h3>
-                    <p class="text-[10px] text-neutral-400 font-bold">Live ανάλυση των 5 διαστάσεων ποιότητας[span_13](start_span)[span_13](end_span).</p>
+                    <p class="text-[10px] text-neutral-400 font-bold">Live ανάλυση των 5 διαστάσεων ποιότητας.</p>
                 </div>
                 <div class="space-y-3 font-mono text-xs font-bold">
                     <div class="flex justify-between"><span>Tangibles (Εμφάνιση):</span><span id="sq_tang" class="font-black text-emerald-400">0/5</span></div>
@@ -247,10 +228,9 @@
                 </div>
             </section>
 
-            <!-- LIVE JSON -->
             <section class="p-6 rounded-2xl enterprise-card sticky top-6">
                 <div class="flex items-center justify-between border-b-3 border-neutral-100 pb-3 mb-4">
-                    <h2 class="text-xs font-black tracking-wider uppercase text-neutral-500 font-mono">Live Data Payload</h2>
+                    <h2 class="text-xs font-bold tracking-wider uppercase text-neutral-500 font-mono">Live Data Payload</h2>
                     <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                 </div>
                 <pre id="jsonPreview" class="text-[11px] bg-neutral-950 p-4 rounded-xl font-black font-mono overflow-x-auto text-emerald-400 max-h-[400px] shadow-inner"></pre>
@@ -270,39 +250,39 @@
 
         const barsGuides = {
             prof: [
-                "1: [ΑΝΕΠΑΡΚΗΣ] Συχνά καθυστερεί, αγνοεί κανόνες υγιεινής/εμφάνισης[span_14](start_span)[span_14](end_span).",
-                "2: [ΒΑΣΙΚΟΣ] Εκτελεί τα τυπικά αλλά χρειάζεται συνεχή επίβλεψη[span_15](start_span)[span_15](end_span).",
-                "3: [ΕΠΑΡΚΗΣ] Συνεπής, τηρεί απόλυτα τους κανόνες, αποτελεσματικός[span_16](start_span)[span_16](end_span).",
-                "4: [ΥΨΗΛΟΣ] Ξεπερνά τα πρότυπα, δείχνει εξαιρετική προσοχή στη λεπτομέρεια[span_17](start_span)[span_17](end_span).",
-                "5: [ΥΠΟΔΕΙΓΜΑ] Ολοκληρώνει πάντα τις εργασίες πριν την προθεσμία, παραδίδει τέλεια ποιότητα[span_18](start_span)[span_18](end_span)."
+                "1: [ΑΝΕΠΑΡΚΗΣ] Συχνά καθυστερεί, αγνοεί κανόνες υγιεινής και εμφάνισης.",
+                "2: [ΒΑΣΙΚΟΣ] Εκτελεί τα τυπικά αλλά χρειάζεται συνεχή επίβλεψη.",
+                "3: [ΕΠΑΡΚΗΣ] Συνεπής, τηρεί απόλυτα τους κανόνες, αποτελεσματικός.",
+                "4: [ΥΨΗΛΟΣ] Ξεπερνά τα πρότυπα, δείχνει εξαιρετική προσοχή στη λεπτομέρεια.",
+                "5: [ΥΠΟΔΕΙΓΜΑ] Ολοκληρώνει πάντα τις εργασίες πριν την προθεσμία, παραδίδει τέλεια ποιότητα."
             ],
             comm: [
-                "1: [ΑΝΕΠΑΡΚΗΣ] Ελλιπής επικοινωνία με πελάτες ή ομάδα, δημιουργεί παρεξηγήσεις[span_19](start_span)[span_19](end_span).",
-                "2: [ΒΑΣΙΚΟΣ] Μιλάει τυπικά, αλλά χάνει τη μη λεκτική επικοινωνία[span_20](start_span)[span_20](end_span).",
-                "3: [ΕΠΑΡΚΗΣ] Ακούει ενεργά, μεταφέρει πληροφορίες με σαφήνεια[span_21](start_span)[span_21](end_span).",
-                "4: [ΥΨΗΛΟΣ] Υψηλή ενσυναίσθηση, προβλέπει τις ανάγκες των πελατών[span_22](start_span)[span_22](end_span).",
-                "5: [ΥΠΟΔΕΙΓΜΑ] Υπόδειγμα επικοινωνίας, επιλύει άμεσα κάθε παρεξήγηση[span_23](start_span)[span_23](end_span)."
+                "1: [ΑΝΕΠΑΡΚΗΣ] Ελλιπής επικοινωνία με πελάτες ή ομάδα, δημιουργεί παρεξηγήσεις.",
+                "2: [ΒΑΣΙΚΟΣ] Μιλάει τυπικά, αλλά χάνει τη μη λεκτική επικοινωνία.",
+                "3: [ΕΠΑΡΚΗΣ] Ακούει ενεργά, μεταφέρει πληροφορίες με σαφήνεια.",
+                "4: [ΥΨΗΛΟΣ] Υψηλή ενσυναίσθηση, προβλέπει τις ανάγκες των πελατών.",
+                "5: [ΥΠΟΔΕΙΓΜΑ] Υπόδειγμα επικοινωνίας, επιλύει άμεσα κάθε παρεξήγηση."
             ],
             team: [
-                "1: [ΑΝΕΠΑΡΚΗΣ] Ατομικιστική συμπεριφορά, αρνείται να βοηθήσει την ομάδα[span_24](start_span)[span_24](end_span).",
-                "2: [ΒΑΣΙΚΟΣ] Συνεργάζεται μόνο αν του ζητηθεί ρητά[span_25](start_span)[span_25](end_span).",
-                "3: [ΕΠΑΡΚΗΣ] Αρμονική συνεργασία, βοηθάει πρόθυμα τους συναδέλφους[span_26](start_span)[span_26](end_span).",
-                "4: [ΥΨΗΛΟΣ] Υποστηρίζει ενεργά την ομάδα, συμβάλλει θετικά στο κλίμα[span_27](start_span)[span_27](end_span).",
-                "5: [ΥΠΟΔΕΙΓΜΑ] Πυλώνας της ομάδας, εμπνέει τους συναδέλφους, εκμηδενίζει εντάσεις[span_28](start_span)[span_28](end_span)."
+                "1: [ΑΝΕΠΑΡΚΗΣ] Ατομικιστική συμπεριφορά, αρνείται να βοηθήσει την ομάδα.",
+                "2: [ΒΑΣΙΚΟΣ] Συνεργάζεται μόνο αν του ζητηθεί ρητά.",
+                "3: [ΕΠΑΡΚΗΣ] Αρμονική συνεργασία, βοηθάει πρόθυμα τους συναδέλφους.",
+                "4: [ΥΨΗΛΟΣ] Υποστηρίζει ενεργά την ομάδα, συμβάλλει θετικά στο κλίμα.",
+                "5: [ΥΠΟΔΕΙΓΜΑ] Πυλώνας της ομάδας, εμπνέει τους συναδέλφους, εκμηδενίζει εντάσεις."
             ],
             init: [
-                "1: [ΑΝΕΠΑΡΚΗΣ] Παθητική στάση, περιμένει μόνιμα εντολές, καμία διάθεση για μάθηση[span_29](start_span)[span_29](end_span).",
-                "2: [ΒΑΣΙΚΟΣ] Αντιδρά αργά στις αλλαγές, δείχνει χαμηλό ενδιαφέρον[span_30](start_span)[span_30](end_span).",
-                "3: [ΕΠΑΡΚΗΣ] Αναλαμβάνει πρωτοβουλίες, προσαρμόζεται εύκολα[span_31](start_span)[span_31](end_span).",
-                "4: [ΥΨΗΛΟΣ] Ψάχνει τρόπους να βελτιωθεί, προσαρμόζεται αμέσως στην πίεση[span_32](start_span)[span_32](end_span).",
-                "5: [ΥΠΟΔΕΙΓΜΑ] Απόλυτα ευέλικτος σε κρίσεις, ηγείται στην καινοτομία[span_33](start_span)[span_33](end_span)."
+                "1: [ΑΝΕΠΑΡΚΗΣ] Παθητική στάση, περιμένει μόνιμα εντολές, καμία διάθεση για μάθηση.",
+                "2: [ΒΑΣΙΚΟΣ] Αντιδρά αργά στις αλλαγές, δείχνει χαμηλό ενδιαφέρον.",
+                "3: [ΕΠΑΡΚΗΣ] Αναλαμβάνει πρωτοβουλίες, προσαρμόζεται εύκολα.",
+                "4: [ΥΨΗΛΟΣ] Ψάχνει τρόπους να βελτιωθεί, προσαρμόζεται αμέσως στην πίεση.",
+                "5: [ΥΠΟΔΕΙΓΜΑ] Απόλυτα ευέλικτος σε κρίσεις, ηγείται στην καινοτομία."
             ],
             prob: [
-                "1: [ΑΝΕΠΑΡΚΗΣ] Πανικοβάλλεται ή αδρανεί σε προβλήματα (π.χ. λάθος παραγγελία)[span_34](start_span)[span_34](end_span).",
-                "2: [ΒΑΣΙΚΟΣ] Αναγνωρίζει το πρόβλημα αλλά περιμένει πάντα από τον Supervisor[span_35](start_span)[span_35](end_span).",
-                "3: [ΕΠΑΡΚΗΣ] Αντιδρά ψύχραιμα, βρίσκει ικανοποιητικές λύσεις[span_36](start_span)[span_36](end_span).",
-                "4: [ΥΨΗΛΟΣ] Επιλύει παράπονα πελατών με ευγένεια, μετατρέποντας το λάθος σε θετική εμπειρία[span_37](start_span)[span_37](end_span).",
-                "5: [ΥΠΟΔΕΙΓΜΑ] Απόλυτος έλεγχος κρίσεων, προβλέπει και εξουδετερώνει προβλήματα[span_38](start_span)[span_38](end_span)."
+                "1: [ΑΝΕΠΑΡΚΗΣ] Πανικοβάλλεται ή αδρανεί σε προβλήματα (π.χ. λάθος παραγγελία).",
+                "2: [ΒΑΣΙΚΟΣ] Αναγνωρίζει το πρόβλημα αλλά περιμένει πάντα από τον Supervisor.",
+                "3: [ΕΠΑΡΚΗΣ] Αντιδρά ψύχραιμα, βρίσκει ικανοποιητικές λύσεις.",
+                "4: [ΥΨΗΛΟΣ] Επιλύει παράπονα πελατών με ευγένεια, μετατρέποντας το λάθος σε θετική εμπειρία.",
+                "5: [ΥΠΟΔΕΙΓΜΑ] Απόλυτος έλεγχος κρίσεων, προβλέπει και εξουδετερώνει προβλήματα."
             ]
         };
 
@@ -414,11 +394,11 @@
             list.innerHTML = '';
             state.recommendedTraining = [];
 
-            if (state.metrics.professionalism_efficiency <= 2) state.recommendedTraining.push("Σεμινάριο Προτύπων Ποιότητας & Υγιεινής (Forbes Standards)[span_39](start_span)[span_39](end_span)");
-            if (state.metrics.communication_guest_centric <= 2) state.recommendedTraining.push("Εκπαίδευση στην Ενεργή Ακρόαση (Cornell Research)[span_40](start_span)[span_40](end_span)");
-            if (state.metrics.teamwork_collaboration <= 2) state.recommendedTraining.push("Workshop Ομαδικότητας & Διαχείρισης Feedback[span_41](start_span)[span_41](end_span)");
-            if (state.metrics.initiative_adaptability <= 2) state.recommendedTraining.push("Micro-learning: Ανάληψη Πρωτοβουλιών στη Βάρδια[span_42](start_span)[span_42](end_span)");
-            if (state.metrics.problem_solving <= 2) state.recommendedTraining.push("Σεμινάριο Διαχείρισης Κρίσεων υπό Πίεση[span_43](start_span)[span_43](end_span)");
+            if (state.metrics.professionalism_efficiency <= 2) state.recommendedTraining.push("Σεμινάριο Προτύπων Ποιότητας & Υγιεινής (Forbes Standards)");
+            if (state.metrics.communication_guest_centric <= 2) state.recommendedTraining.push("Εκπαίδευση στην Ενεργή Ακρόαση (Cornell Research)");
+            if (state.metrics.teamwork_collaboration <= 2) state.recommendedTraining.push("Workshop Ομαδικότητας & Διαχείρισης Feedback");
+            if (state.metrics.initiative_adaptability <= 2) state.recommendedTraining.push("Micro-learning: Ανάληψη Πρωτοβουλιών στη Βάρδια");
+            if (state.metrics.problem_solving <= 2) state.recommendedTraining.push("Σεμινάριο Διαχείρισης Κρίσεων υπό Πίεση");
 
             if (state.recommendedTraining.length > 0) {
                 section.classList.remove('hidden');
