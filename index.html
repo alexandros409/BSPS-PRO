@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSPS Pro - HMS Evaluation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen bg-gradient-to-br from-[#090d16] via-[#0f172a] to-[#090d16] p-4 md:p-8">
+
+    <!-- HEADER SECTION -->
+    <header class="max-w-5xl mx-auto mb-8 flex flex-col sm:flex-row items-center justify-between p-6 rounded-3xl glass-panel gap-4">
+        <div class="flex items-center gap-5">
+            <!-- Glassmorphism Premium Icon -->
+            <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-tr from-white/10 to-white/5 border border-white/10 flex items-center justify-center shadow-inner group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                <svg class="w-8 h-8 text-amber-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold tracking-wide bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent m-0">BSPS Pro</h1>
+                <p class="text-xs text-amber-400 tracking-widest uppercase font-mono mt-0.5">Butler Service Performance System</p>
+            </div>
+        </div>
+        <div>
+            <span class="text-xs bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-slate-400 font-mono">v2.0 (B2B HTML)</span>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- FORM -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- INFO -->
+            <section class="p-6 rounded-3xl glass-panel space-y-4">
+                <h2 class="text-lg font-semibold text-slate-200 border-b border-white/5 pb-2">Στοιχεία Βάρδιας</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Όνομα Εργαζομένου</label>
+                        <input type="text" id="empName" placeholder="π.χ. Emre, Tania" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Ρόλος / Πόστο</label>
+                        <select id="empRole" class="w-full bg-[#0f172a] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                            <option value="Service / Azubi">Service / Azubi</option>
+                            <option value="Kitchen / Back of House">Kitchen / Back of House</option>
+                            <option value="Bar / Barista">Bar / Barista</option>
+                            <option value="Supervisor">Supervisor</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5 CORE SKILLS -->
+            <section class="p-6 rounded-3xl glass-panel space-y-6">
+                <h2 class="text-lg font-semibold text-slate-200 border-b border-white/5 pb-2">Core Skills & Behaviors <span class="text-xs text-slate-400 font-normal">(1-100)</span></h2>
+                
+                <!-- Metric 1 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <label class="font-medium text-slate-300">1. Επαγγελματισμός & Αποτελεσματικότητα</label>
+                        <span id="val_prof" class="text-amber-400 font-mono font-bold">50%</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Συνέπεια, ποιότητα, κανόνες υγιεινής και εμφάνιση.</p>
+                    <input type="range" id="prof" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <label class="font-medium text-slate-300">2. Επικοινωνία & Πελατοκεντρική</label>
+                        <span id="val_comm" class="text-amber-400 font-mono font-bold">50%</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Αντίληψη αναγκών, ενεργή επικοινωνία με πελάτες & ομάδα.</p>
+                    <input type="range" id="comm" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <label class="font-medium text-slate-300">3. Ομαδικό Πνεύμα & Συνεργασία</label>
+                        <span id="val_team" class="text-amber-400 font-mono font-bold">50%</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Αρμονική συνεργασία, υποστήριξη της ομάδας, έλλειψη εγωισμού.</p>
+                    <input type="range" id="team" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <label class="font-medium text-slate-300">4. Πρωτοβουλία & Προσαρμοστικότητα</label>
+                        <span id="val_init" class="text-amber-400 font-mono font-bold">50%</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Ανάληψη ευθυνών, διάθεση για μάθηση, ευελιξία.</p>
+                    <input type="range" id="init" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                </div>
+
+                <!-- Metric 5 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <label class="font-medium text-slate-300">5. Διαχείριση Προβλημάτων</label>
+                        <span id="val_prob" class="text-amber-400 font-mono font-bold">50%</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Αναγνώριση κρίσεων, εύρεση λύσεων υπό πίεση.</p>
+                    <input type="range" id="prob" min="1" max="100" value="50" class="w-full accent-amber-500" oninput="updateData()">
+                </div>
+            </section>
+
+            <!-- RED FLAGS -->
+            <section class="p-6 rounded-3xl glass-panel space-y-4 border border-red-500/10 bg-red-500/[0.01]">
+                <h2 class="text-lg font-semibold text-red-400 border-b border-red-500/10 pb-2">Critical Red Flags</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div id="card_toxic" class="p-4 rounded-2xl border glass-card border-white/5 transition">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="block text-sm font-bold text-slate-200">Τοξικότητα (VETO)</span>
+                                <span class="text-[11px] text-slate-400">Αρνητική συμπεριφορά στην ομάδα.</span>
+                            </div>
+                            <input type="checkbox" id="toxic" class="w-5 h-5 accent-red-500 cursor-pointer" onchange="updateData()">
+                        </div>
+                    </div>
+                    <div id="card_lack" class="p-4 rounded-2xl border glass-card border-white/5 transition">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="block text-sm font-bold text-slate-200">Έλλειψη Δέσμευσης</span>
+                                <span class="text-[11px] text-slate-400">Αδιαφορία, παθητικότητα.</span>
+                            </div>
+                            <input type="checkbox" id="lack" class="w-5 h-5 accent-red-500 cursor-pointer" onchange="updateData()">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <button onclick="submitEval()" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold tracking-wide rounded-2xl shadow-lg transition transform active:scale-95">
+                Αποθήκευση Αξιολόγησης (Submit)
+            </button>
+        </div>
+
+        <!-- SIDEBAR: LIVE JSON PREVIEW -->
+        <div class="space-y-6">
+            <section class="p-6 rounded-3xl glass-panel sticky top-6">
+                <div class="flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <h2 class="text-md font-bold tracking-wide text-slate-300">Live JSON Payload</h2>
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                </div>
+                <pre id="jsonPreview" class="text-[11px] bg-black/40 p-4 rounded-xl font-mono overflow-x-auto border border-white/5 text-emerald-400 max-h-[400px]"></pre>
+                <div id="vetoAlert" class="hidden mt-4 p-3 bg-red-900/30 border border-red-500/50 rounded-xl text-center">
+                    <p class="text-xs font-bold text-red-400 uppercase tracking-widest">⚠️ VETO TRIGGERED: TOXICITY ALERT</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- CORE LOGIC SCRIPT -->
+    <script>
+        const state = {
+            employeeName: '',
+            evaluatedBy: 'Alexandros Chatziliadis',
+            role: 'Service / Azubi',
+            metrics: { professionalism_efficiency: 50, communication_guest_centric: 50, teamwork_collaboration: 50, initiative_adaptability: 50, problem_solving: 50 },
+            redFlags: { toxicity_veto: false, lack_of_commitment: false }
+        };
+
+        function updateData() {
+            state.employeeName = document.getElementById('empName').value;
+            state.role = document.getElementById('empRole').value;
+            
+            state.metrics.professionalism_efficiency = parseInt(document.getElementById('prof').value);
+            state.metrics.communication_guest_centric = parseInt(document.getElementById('comm').value);
+            state.metrics.teamwork_collaboration = parseInt(document.getElementById('team').value);
+            state.metrics.initiative_adaptability = parseInt(document.getElementById('init').value);
+            state.metrics.problem_solving = parseInt(document.getElementById('prob').value);
+            
+            state.redFlags.toxicity_veto = document.getElementById('toxic').checked;
+            state.redFlags.lack_of_commitment = document.getElementById('lack').checked;
+
+            // UI Updates
+            document.getElementById('val_prof').innerText = state.metrics.professionalism_efficiency + '%';
+            document.getElementById('val_comm').innerText = state.metrics.communication_guest_centric + '%';
+            document.getElementById('val_team').innerText = state.metrics.teamwork_collaboration + '%';
+            document.getElementById('val_init').innerText = state.metrics.initiative_adaptability + '%';
+            document.getElementById('val_prob').innerText = state.metrics.problem_solving + '%';
+
+            // Red Flag UI Toggles
+            document.getElementById('card_toxic').className = state.redFlags.toxicity_veto ? 'p-4 rounded-2xl border bg-red-500/10 border-red-500/40 transition' : 'p-4 rounded-2xl border glass-card border-white/5 transition';
+            document.getElementById('card_lack').className = state.redFlags.lack_of_commitment ? 'p-4 rounded-2xl border bg-red-500/10 border-red-500/40 transition' : 'p-4 rounded-2xl border glass-card border-white/5 transition';
+            
+            // Veto Warning
+            document.getElementById('vetoAlert').style.display = state.redFlags.toxicity_veto ? 'block' : 'none';
+
+            // Print Live JSON
+            document.getElementById('jsonPreview').innerText = JSON.stringify(state, null, 2);
+        }
+
+        function submitEval() {
+            alert('Η αξιολόγηση για τον/την ' + (state.employeeName || 'Υπάλληλο') + ' δημιουργήθηκε τοπικά! Το JSON payload είναι έτοιμο.');
+            console.log(state);
+        }
+
+        // Listeners for inputs
+        document.getElementById('empName').addEventListener('input', updateData);
+        document.getElementById('empRole').addEventListener('change', updateData);
+        
+        // Init run
+        updateData();
+    </script>
+</body>
+</html>
